@@ -18,7 +18,7 @@ Architecture button_deb_tb_1 of button_deb_tb is
     component button_deb
         generic (
             clk_freq : natural := 95_000;    -- clk frequency in kHz
-            debounce_per_ms : time := 20 -- debounce period in ms
+            debounce_per_ms : time := 20 ms-- debounce period in ms
         );
         port (
             -- sync design
