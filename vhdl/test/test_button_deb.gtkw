@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.62 (w)1999-2014 BSI
+[*] Sun Nov  2 08:55:04 2014
+[*]
+[dumpfile] "/home/fabien/myapp/blp/vhdl/simu/button_deb_tb.ghw"
+[dumpfile_mtime] "Sun Nov  2 08:51:29 2014"
+[dumpfile_size] 289377340
+[savefile] "/home/fabien/myapp/blp/vhdl/test/test_button_deb.gtkw"
+[timestart] 0
+[size] 1366 668
+[pos] -40 -40
+*-46.281761 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[sst_width] 224
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 167
+@28
+top.button_deb_tb.clk
+top.button_deb_tb.rst
+top.button_deb_tb.button_in
+@29
+top.button_deb_tb.button_valid
+[pattern_trace] 1
+[pattern_trace] 0

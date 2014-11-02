@@ -59,8 +59,52 @@ begin
 
     stimulis_p : process
     begin
-        button_in <=  '1';
-        wait for 5*DEBOUNCE_PER_MS;
+        rst <= '1';
+        button_in <=  '0';
+        wait for 1 ms;
+        rst <= '0';
+        wait for DEBOUNCE_PER_MS;
+        -- 0 to 1
+        button_in <= '1';
+        wait for DEBOUNCE_PER_MS/100;
+        button_in <= '0';             
+        wait for DEBOUNCE_PER_MS/100;
+        button_in <= '1';             
+        wait for DEBOUNCE_PER_MS/80;
+        button_in <= '0';             
+        wait for DEBOUNCE_PER_MS/80;
+        button_in <= '1';             
+        wait for DEBOUNCE_PER_MS/50;
+        button_in <= '0';             
+        wait for DEBOUNCE_PER_MS/50;
+        button_in <= '1';             
+        wait for DEBOUNCE_PER_MS/10;
+        button_in <= '0';             
+        wait for DEBOUNCE_PER_MS/10;
+        button_in <= '1';
+
+        wait for 10 * DEBOUNCE_PER_MS;
+
+        -- 1 to 0
+        button_in <= '0';
+        wait for DEBOUNCE_PER_MS/100;
+        button_in <= '1';
+        wait for DEBOUNCE_PER_MS/100;
+        button_in <= '0';
+        wait for DEBOUNCE_PER_MS/80;
+        button_in <= '1';
+        wait for DEBOUNCE_PER_MS/80;
+        button_in <= '0';
+        wait for DEBOUNCE_PER_MS/50;
+        button_in <= '1';
+        wait for DEBOUNCE_PER_MS/50;
+        button_in <= '0';
+        wait for DEBOUNCE_PER_MS/10;
+        button_in <= '1';
+        wait for DEBOUNCE_PER_MS/10;
+        button_in <= '0';
+
+        wait for 5 * DEBOUNCE_PER_MS;
         assert false report "*** End of test ***";
     end process stimulis_p;
 
