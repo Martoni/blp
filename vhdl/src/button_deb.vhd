@@ -15,7 +15,7 @@ Entity button_deb is
         -- sync design
         clk : in std_logic;
         rst : in std_logic;
-        -- input
+        -- in-out
         button_in : in std_logic;
         button_valid : out std_logic
     );
