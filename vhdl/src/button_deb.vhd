@@ -22,22 +22,40 @@ Entity button_deb is
 end entity;
 
 Architecture button_deb_1 of button_deb is
-    signal button_in_old : std_logic;
     signal edge : std_logic;
-    signal output_s : std_logic;
+    signal edge_deb : std_logic;
+    signal debounced : std_logic;
+    signal button_in_s : std_logic;
+    signal button_hold : std_logic;
+    signal button_valid_s : std_logic;
+    CONSTANT HALF_CLK_PER : time := (1 sec) / (clk_freq * 500);
     CONSTANT MAX_COUNT : natural :=
-        (clk_freq * debounce_per_ms/(1000 ms)) + 1;
+            (debounce_per_ms / HALF_CLK_PER ) + 1;
     signal count : natural range 0 to MAX_COUNT;
 begin
-    button_valid <= button_in;
 
+    -- synchronize button_in
+    sync_button_p : process(clk, rst)
+        variable button_in_old : std_logic;
+    begin
+        if rst = '1' then
+            button_in_s <= '0';
+            button_in_old := '0';
+        elsif rising_edge(clk) then
+            button_in_s <= button_in_old;
+            button_in_old := button_in;
+        end if;
+    end process sync_button_p;
+
+    -- detecting edge.
     edge_pc: process(clk, rst)
+        variable button_in_edge_old : std_logic;
     begin
         if (rst = '1') then
-            button_in_old <= button_in;
+            button_in_edge_old := button_in_s;
         elsif rising_edge(clk) then
-            edge <= button_in xor button_in_old;
-            button_in_old <= button_in;
+            edge <= button_in_s xor button_in_edge_old;
+            button_in_edge_old := button_in_s;
         end if;
     end process edge_pc;
 
@@ -55,8 +73,27 @@ begin
         end if;
     end process count_p;
 
-    -- update output value
-    output_s <= button_in when count = (MAX_COUNT - 1) else output_s;
-    button_valid <= output_s;
+    -- button sig debounced
+    debounced <= edge when count = (MAX_COUNT - 1) else '0';
+
+    -- button commute
+    commute_p : process(clk, rst)
+    begin
+        if rst = '1' then
+            button_hold <= '0';
+            button_valid_s <= button_in_s;
+        elsif rising_edge(clk) then
+            if (debounced = '1') and (edge = '1') then
+                button_hold <= not button_hold;
+            else
+                button_hold <= button_hold;
+            end if;
+            if debounced = '1' and button_hold = '0' then
+                button_valid_s <= not button_valid_s;
+            end if;
+        end if;
+    end process commute_p;
+
+    button_valid <= button_valid_s;
 
 end Architecture button_deb_1;
