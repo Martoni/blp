@@ -14,4 +14,16 @@ input    rst;
 input    button_in;
 output   button_valid;
 
+reg button_in_s;
+reg button_in_old;
+
+    // synchronize button_in
+    always@(posedge clk, posedge rst)
+    begin
+        if (rst) begin
+            button_in_s <= 1'b0;
+            button_in_old <= 1'b0;
+        end else begin
+        end
+    end
 endmodule
