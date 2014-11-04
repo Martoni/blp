@@ -40,9 +40,9 @@ begin
     clk_p : process
     begin
         clk <= '1';
-        wait for (1 sec)/(CLK_FREQ * 1000);
+        wait for (1 sec)/(CLK_FREQ * 2000);
         clk <= '0';
-        wait for (1 sec)/(CLK_FREQ * 1000);
+        wait for (1 sec)/(CLK_FREQ * 2000);
     end process clk_p;
 
     button_deb_connect : button_deb
@@ -108,7 +108,7 @@ begin
             button_in <= '0';
             wait for 2 * DEBOUNCE_PER_MS;
         end loop;
-        wait for 5 * DEBOUNCE_PER_MS;
+        wait for DEBOUNCE_PER_MS;
         assert false report "*** End of test ***";
     end process stimulis_p;
 
