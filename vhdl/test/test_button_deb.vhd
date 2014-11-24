@@ -13,12 +13,12 @@ end entity;
 Architecture button_deb_tb_1 of button_deb_tb is
 
     CONSTANT CLK_FREQ : natural := 95_000; -- clk freq in kHz
-    CONSTANT DEBOUNCE_PER_MS : time := 20 ms;
+    CONSTANT DEBOUNCE_PER_MS : natural := 20;
 
     component button_deb is
         generic (
             clk_freq : natural := 95_000;    -- clk frequency in kHz
-            debounce_per_ms : time := 20 ms-- debounce period in ms
+            debounce_per_ms : natural := 20  -- debounce period in ms
         );
         port (
             -- sync design
@@ -64,51 +64,51 @@ begin
         button_in <=  '0';
         wait for 1 ms;
         rst <= '0';
-        wait for DEBOUNCE_PER_MS;
+        wait for DEBOUNCE_PER_MS * 1 ms;
 
         for i in 0 to 1 loop
             -- 0 to 1
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/100;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/100;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/80;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/80;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/50;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/50;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/10;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/10;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
             button_in <= '1';
 
-            wait for 2 * DEBOUNCE_PER_MS;
+            wait for 2 * (DEBOUNCE_PER_MS * 1 ms);
 
             -- 1 to 0
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/100;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/100;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/80;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/80;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/50;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/50;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
             button_in <= '0';
-            wait for DEBOUNCE_PER_MS/10;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
             button_in <= '1';
-            wait for DEBOUNCE_PER_MS/10;
+            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
             button_in <= '0';
-            wait for 2 * DEBOUNCE_PER_MS;
+            wait for 2 * (DEBOUNCE_PER_MS * 1 ms);
         end loop;
-        wait for DEBOUNCE_PER_MS;
+        wait for (DEBOUNCE_PER_MS * 1 ms);
         assert false report "*** End of test ***";
     end process stimulis_p;
 

@@ -9,7 +9,7 @@ use IEEE.numeric_std.all;
 Entity button_deb is
     generic (
         clk_freq : natural := 95_000;    -- clk frequency in kHz
-        debounce_per_ms : time := 20 ms-- debounce period in ms
+        debounce_per_ms : natural := 20  -- debounce period in ms
     );
     port (
         -- sync design
@@ -27,9 +27,7 @@ Architecture button_deb_1 of button_deb is
     signal button_in_s : std_logic := '0';
     signal button_hold : std_logic := '0';
     signal button_valid_s : std_logic := '0';
-    CONSTANT CLK_PER : time := (1 sec) / (clk_freq * 1000);
-    CONSTANT MAX_COUNT : natural :=
-            (debounce_per_ms / CLK_PER ) + 1;
+    CONSTANT MAX_COUNT : natural := ((debounce_per_ms * clk_freq)) + 1;
     signal count : natural range 0 to MAX_COUNT := (MAX_COUNT - 1);
 begin
 
