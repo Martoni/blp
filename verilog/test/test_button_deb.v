@@ -35,7 +35,7 @@ initial begin
         $display("loop begin");
         /* 0 to 1 */
         button_in = 1;
-        wait_ms(`DEBOUNCE_PER_MS * 10);
+        wait_us(`DEBOUNCE_PER_MS * 10);
         button_in = 0;
         wait_us(`DEBOUNCE_PER_MS * 10);
         button_in = 1;
