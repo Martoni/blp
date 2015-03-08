@@ -14,16 +14,73 @@ input    rst;
 input    button_in;
 output   button_valid;
 
+//Architecture 
+
+localparam  MAX_COUNT = ((debounce_per_ms * clk_freq)) + 1;
+
+reg aedge;
+wire debounced;
+
 reg button_in_s;
 reg button_in_old;
+reg button_hold;
+
+reg button_valid_s;
+integer count;
+
+reg button_in_edge_old;
 
     // synchronize button_in
     always@(posedge clk, posedge rst)
     begin
         if (rst) begin
-            button_in_s <= 1'b0;
-            button_in_old <= 1'b0;
+            button_in_s = 1'b0;
+            button_in_old = 1'b0;
         end else begin
         end
     end
+
+    // detecting edge
+    always@(posedge clk, posedge rst)
+    begin
+        if (rst) begin
+            button_in_edge_old = 1'b0;
+        end else begin
+            aedge = button_in_s ^ button_in_edge_old;
+            button_in_edge_old = button_in_s;
+        end
+    end
+
+    // counter
+    always@(posedge clk, posedge rst)
+    begin
+        if (rst) begin
+            count = (MAX_COUNT - 1);
+        end else begin
+            if(count < MAX_COUNT)
+                count = count + 1;
+            else
+                count = 0;
+        end
+    end
+
+    // button sig debounced
+    assign debounced = (count == MAX_COUNT) ? aedge : 1'b0;
+
+    // button commute
+    always@(posedge clk, posedge rst)
+    begin
+        if (rst) begin
+            button_hold = 1'b0;
+            button_valid_s = 1'b0;
+        end else begin
+            if ((debounced == 1'b1) && (aedge == 1'b1))
+                button_hold = ~button_hold;
+            if ((debounced == 1'b1) && (button_hold == 1'b0))
+                button_valid_s = ~button_valid_s;
+        end
+    end
+
+    assign button_valid = button_valid_s;
+
 endmodule
