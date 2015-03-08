@@ -24,8 +24,10 @@ end entity;
 Architecture button_deb_1 of button_deb is
     signal edge : std_logic := '0';
     signal debounced : std_logic;
+
     signal button_in_s : std_logic := '0';
     signal button_hold : std_logic := '0';
+
     signal button_valid_s : std_logic := '0';
     CONSTANT MAX_COUNT : natural := ((debounce_per_ms * clk_freq)) + 1;
     signal count : natural range 0 to MAX_COUNT := (MAX_COUNT - 1);
