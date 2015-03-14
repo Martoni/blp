@@ -15,7 +15,9 @@ parameter debounce_per_ms = 20;
 
 //Architecture 
 
-localparam  MAX_COUNT = ((debounce_per_ms * clk_freq)) + 1;
+localparam MAX_COUNT = ((debounce_per_ms * clk_freq)) + 1;
+
+parameter integer MAX_COUNT_UPPER = $floor($log10(MAX_COUNT)/$log10(2));
 
 reg aedge;
 wire debounced;
@@ -25,7 +27,7 @@ reg button_in_old;
 reg button_hold;
 
 reg button_valid_s;
-integer count;
+reg [MAX_COUNT_UPPER:0] count;
 
 reg button_in_edge_old;
 
