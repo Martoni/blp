@@ -34,50 +34,63 @@ reg button_in_edge_old;
     always@(posedge clk, posedge rst)
     begin
         if (rst) begin
-            button_in_s = 1'b0;
-            button_in_old = 1'b0;
-        end else begin
+            button_in_s <= 1'b0;
+            button_in_old <= 1'b0;
+        end
+        else if(clk)
+        begin
+            button_in_old <= button_in;
+            button_in_s <= button_in_old;
         end
     end
 
     // detecting edge
     always@(posedge clk, posedge rst)
     begin
-        if (rst) begin
-            button_in_edge_old = 1'b0;
-        end else begin
-            aedge = button_in_s ^ button_in_edge_old;
-            button_in_edge_old = button_in_s;
+        if (rst)
+            button_in_edge_old <= 1'b0;
+        else if(clk)
+        begin
+            aedge <= button_in_s ^ button_in_edge_old;
+            button_in_edge_old <= button_in_s;
         end
     end
 
     // counter
     always@(posedge clk, posedge rst)
     begin
-        if (rst) begin
-            count = (MAX_COUNT - 1);
-        end else begin
+        if (rst)
+        begin
+            count <= (MAX_COUNT - 1);
+        end
+        else if(clk)
+        begin
             if(count < MAX_COUNT)
-                count = count + 1;
-            else
-                count = 0;
+            begin
+                count <= count + 1;
+            end
+            else if(aedge == 1'b1)
+            begin
+                count <= 0;
+            end
         end
     end
 
-    // button sig debounced
     assign debounced = (count == MAX_COUNT) ? aedge : 1'b0;
 
     // button commute
     always@(posedge clk, posedge rst)
     begin
         if (rst) begin
-            button_hold = 1'b0;
-            button_valid_s = 1'b0;
-        end else begin
+            button_hold <= 1'b0;
+            button_valid_s <= 1'b0;
+        end
+        else if(clk)
+        begin
             if ((debounced == 1'b1) && (aedge == 1'b1))
-                button_hold = ~button_hold;
+                button_hold <= ~button_hold;
             if ((debounced == 1'b1) && (button_hold == 1'b0))
-                button_valid_s = ~button_valid_s;
+                button_valid_s <= ~button_valid_s;
         end
     end
 
