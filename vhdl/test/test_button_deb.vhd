@@ -108,7 +108,6 @@ begin
             button_in <= '0';
             wait for 2 * (DEBOUNCE_PER_MS * 1 ms);
         end loop;
-        wait for (DEBOUNCE_PER_MS * 1 ms);
         assert false report "*** End of test ***";
     end process stimulis_p;
 
