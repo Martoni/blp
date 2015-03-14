@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.62 (w)1999-2014 BSI
+[*] Sat Mar 14 09:01:12 2015
+[*]
+[dumpfile] "/home/fabien/myapp/blp/verilog/simu/button_deb_tb.lxt"
+[dumpfile_mtime] "Sat Mar 14 09:00:00 2015"
+[dumpfile_size] 106740534
+[savefile] "/home/fabien/myapp/blp/verilog/blp.gtkw"
+[timestart] 0
+[size] 1366 702
+[pos] -1 -1
+*-35.333248 21000036300 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test_button_deb.
+[sst_width] 218
+[signals_width] 247
+[sst_expanded] 1
+[sst_vpaned_height] 177
+@28
+test_button_deb.button.clk[0]
+@200
+-general
+@28
+test_button_deb.button_in[0]
+test_button_deb.button.button_in_s[0]
+@29
+test_button_deb.button.button_in_old[0]
+@28
+test_button_deb.button_valid[0]
+test_button_deb.rst[0]
+@200
+-button
+@800022
+#{test_button_deb.button.count[0:31]} (31)test_button_deb.button.count[31:0] (30)test_button_deb.button.count[31:0] (29)test_button_deb.button.count[31:0] (28)test_button_deb.button.count[31:0] (27)test_button_deb.button.count[31:0] (26)test_button_deb.button.count[31:0] (25)test_button_deb.button.count[31:0] (24)test_button_deb.button.count[31:0] (23)test_button_deb.button.count[31:0] (22)test_button_deb.button.count[31:0] (21)test_button_deb.button.count[31:0] (20)test_button_deb.button.count[31:0] (19)test_button_deb.button.count[31:0] (18)test_button_deb.button.count[31:0] (17)test_button_deb.button.count[31:0] (16)test_button_deb.button.count[31:0] (15)test_button_deb.button.count[31:0] (14)test_button_deb.button.count[31:0] (13)test_button_deb.button.count[31:0] (12)test_button_deb.button.count[31:0] (11)test_button_deb.button.count[31:0] (10)test_button_deb.button.count[31:0] (9)test_button_deb.button.count[31:0] (8)test_button_deb.button.count[31:0] (7)test_button_deb.button.count[31:0] (6)test_button_deb.button.count[31:0] (5)test_button_deb.button.count[31:0] (4)test_button_deb.button.count[31:0] (3)test_button_deb.button.count[31:0] (2)test_button_deb.button.count[31:0] (1)test_button_deb.button.count[31:0] (0)test_button_deb.button.count[31:0]
+@24
+test_button_deb.button.count[31:0]
+@1001200
+-group_end
+@28
+test_button_deb.button.debounced[0]
+test_button_deb.button.aedge[0]
+test_button_deb.button.button_in_edge_old[0]
+test_button_deb.button.button_in_old[0]
+test_button_deb.button.button_hold[0]
+[pattern_trace] 1
+[pattern_trace] 0
