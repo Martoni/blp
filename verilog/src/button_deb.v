@@ -9,15 +9,13 @@ module button_deb(
         input    button_in,
         output   button_valid);
 
-    //Generics parameters
+//Generics parameters
 parameter clk_freq = 95000; // clock frequency in kHz
 parameter debounce_per_ms = 20;
 
 //Architecture 
-
-localparam MAX_COUNT = ((debounce_per_ms * clk_freq)) + 1;
-
-parameter integer MAX_COUNT_UPPER = $floor($log10(MAX_COUNT)/$log10(2));
+parameter MAX_COUNT = ((debounce_per_ms * clk_freq)) + 1;
+parameter MAX_COUNT_UPPER = $clog2(MAX_COUNT)-1;
 
 reg aedge;
 wire debounced;
@@ -68,7 +66,7 @@ reg button_in_edge_old;
         begin
             if(count < MAX_COUNT)
             begin
-                count <= count + 1;
+                count <= count + 1'b1;
             end
             else if(aedge == 1'b1)
             begin
