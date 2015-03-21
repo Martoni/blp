@@ -23,7 +23,7 @@ button_deb #(95_000, 20) button(.clk(clk),
 /* Stimulis */
 initial begin
     $display("begin stimulis");
-    $dumpfile("simu/button_deb_tb.lxt");
+    $dumpfile("simu/button_deb_tb.vcd");
     $dumpvars(1, clk, rst, button_in, button_valid, button);
     $monitor("At time %t, value = %h (%0d)",
         $time, button_in, button_in);
