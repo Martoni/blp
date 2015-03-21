@@ -12,7 +12,7 @@ wire button_valid;
 
 /* Make a regular pulsing clock. */
 always
-    #5.26 clk = !clk;
+    #5.263158 clk = !clk;
 
 /* Button connection */
 button_deb #(95_000, 20) button(.clk(clk),
