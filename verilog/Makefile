@@ -4,7 +4,7 @@ VEXEC=vvp
 SIMU_DIR=simu
 GHDL_FLAGS=
 VERILATOR=verilator
-VERILATOR_FLAGS=--trace
+VERILATOR_FLAGS=--trace -O3 -noassert
 VERILATOR_DIR=obj_dir
 
 button_deb: test/test_button_deb.v src/button_deb.v
