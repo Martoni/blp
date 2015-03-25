@@ -69,45 +69,48 @@ begin
         for i in 0 to 1 loop
             -- 0 to 1
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
+            wait for (DEBOUNCE_PER_MS * 1 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
+            wait for (DEBOUNCE_PER_MS * 1 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
+            wait for (DEBOUNCE_PER_MS * 5 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
+            wait for (DEBOUNCE_PER_MS * 5 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
+            wait for (DEBOUNCE_PER_MS * 8 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
+            wait for (DEBOUNCE_PER_MS * 8 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
+            wait for (DEBOUNCE_PER_MS * 10 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
+            wait for (DEBOUNCE_PER_MS * 10 us);
             button_in <= '1';
 
-            wait for 2 * (DEBOUNCE_PER_MS * 1 ms);
+            wait for (DEBOUNCE_PER_MS * 2 ms);
 
             -- 1 to 0
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
+            wait for (DEBOUNCE_PER_MS * 1 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/100;
+            wait for (DEBOUNCE_PER_MS * 1 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
+            wait for (DEBOUNCE_PER_MS * 5 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/80;
+            wait for (DEBOUNCE_PER_MS * 5 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
+            wait for (DEBOUNCE_PER_MS * 8 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/50;
+            wait for (DEBOUNCE_PER_MS * 8 us);
             button_in <= '0';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
+            wait for (DEBOUNCE_PER_MS * 10 us);
             button_in <= '1';
-            wait for (DEBOUNCE_PER_MS * 1 ms)/10;
+            wait for (DEBOUNCE_PER_MS * 10 us);
             button_in <= '0';
-            wait for 2 * (DEBOUNCE_PER_MS * 1 ms);
+
+            wait for (DEBOUNCE_PER_MS * 2 ms);
         end loop;
+        report "<- Simulation Time";
+        wait for 1 ns;
         assert false report "*** End of test ***";
     end process stimulis_p;
 
