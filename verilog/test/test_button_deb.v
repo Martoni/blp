@@ -75,7 +75,7 @@ initial begin
 
         wait_ms(`DEBOUNCE_PER_MS * 2);
     end
-		$display("Simulation time : %t", $time);
+    $display("Simulation time : %t", $time);
     $display("*** End of test ***");
     #1 $finish;
 end
