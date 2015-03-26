@@ -22,8 +22,9 @@ Simulate with same tools than for verilog
 Chisel
 ------
 
-Simulat in scala
+Simulate in scala
 
-SystemC ?
----------
-Maybe useless
+Clash ?
+-------
+
+Maybe
