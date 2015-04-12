@@ -32,7 +32,7 @@ Architecture buslib_tb_1 of buslib_tb is
             byteenable: in std_logic_vector(7 downto 0)
         );
     end component avlreg;
-            -- avalon-mm
+    -- avalon-mm
     signal write : std_logic;
     signal read  : std_logic;
     signal addr  : std_logic_vector(0 downto 0);
@@ -53,13 +53,19 @@ begin
     stimulis_p : process
     begin
         rst <= '1';
-        wait for 1 ms;
+        write <= '0';
+        read <= '0';
+        datawrite <= (others => '0');
+        addr <= (others => '0');
+        byteenable <= (others => '0');
+        wait for 9 us;
         rst <= '0';
-        wait for 1 ms;
+        wait for 500 us;
 
-        avlmm_write(1, x"cafecafe",
+        avlmm_write8(4, x"ca", 2,
             clk, write, addr, datawrite, byteenable);
 
+        wait for 1 ms;
         report "<- Simulation Time";
         assert false report "*** End of test ***";
     end process stimulis_p;
