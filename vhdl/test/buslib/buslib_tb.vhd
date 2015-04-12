@@ -62,8 +62,21 @@ begin
         rst <= '0';
         wait for 500 us;
 
-        avlmm_write8(8, x"ca", 2,
+        avlmm_write8(15, x"ca", 2,
             clk, write, addr, datawrite, byteenable);
+
+        wait for 1 us;
+        avlmm_write8(14, x"fe", 2,
+            clk, write, addr, datawrite, byteenable);
+
+        wait for 1 us;
+        avlmm_write8(13, x"de", 2,
+            clk, write, addr, datawrite, byteenable);
+
+        wait for 1 us;
+        avlmm_write8(12, x"ca", 2,
+            clk, write, addr, datawrite, byteenable);
+
 
         wait for 1 ms;
         report "<- Simulation Time";
