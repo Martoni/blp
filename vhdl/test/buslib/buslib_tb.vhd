@@ -51,6 +51,7 @@ begin
     end process clk_p;
 
     stimulis_p : process
+        variable value : std_logic_vector(7 downto 0);
     begin
         rst <= '1';
         write <= '0';
@@ -61,6 +62,10 @@ begin
         wait for 9 us;
         rst <= '0';
         wait for 500 us;
+
+        avlmm_read8(15, value, 1,
+            clk, read, addr, dataread, byteenable);
+        report "Read value : " & integer'image(to_integer(unsigned(value)));
 
         avlmm_write8(15, x"ca", 2,
             clk, write, addr, datawrite, byteenable);
@@ -76,6 +81,10 @@ begin
         wait for 1 us;
         avlmm_write8(12, x"ca", 2,
             clk, write, addr, datawrite, byteenable);
+
+        avlmm_read8(15, value, 1,
+            clk, read, addr, dataread, byteenable);
+        report "Read value : " & integer'image(to_integer(unsigned(value)));
 
 
         wait for 1 ms;
