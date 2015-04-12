@@ -64,8 +64,6 @@ package body buslib_pkg is
             wait until rising_edge(clk);
         end loop;
 
-        wait until rising_edge(clk);
-        wait until falling_edge(clk);
         datawrite(7 + byte_pos*8 downto byte_pos*8) <= (others => '0');
         write <= '0';
         addr <= ZERO(addr_full'length - 1 downto addrtailsize);

@@ -40,18 +40,18 @@ begin
                    when "0" => -- AVL_ID
                         for i in 0 to 7 loop
                             if byteenable(i) = '1' then
-                                dataread((7 + i * 8) downto (i * 8)) <= 
+                                dataread((7 + i * 8) downto (i * 8)) <=
                                         AVL_ID((7 + i * 8) downto (i * 8));
                             end if;
                         end loop;
                    when "1" => -- avlregister
                         for i in 0 to 7 loop
                             if byteenable(i) = '1' then
-                                dataread((7 + i * 8) downto (i * 8)) <= 
+                                dataread((7 + i * 8) downto (i * 8)) <=
                                         avlregister((7 + i * 8) downto (i * 8));
                             end if;
                         end loop;
-                   when others => 
+                   when others =>
                             dataread <= (others => '0');
                 end case;
             end if;
@@ -68,11 +68,11 @@ begin
                    when "1" => -- avlregister
                         for i in 0 to 7 loop
                             if byteenable(i) = '1' then
-                                avlregister((7 + i * 8) downto (i * 8)) <= 
+                                avlregister((7 + i * 8) downto (i * 8)) <=
                                         datawrite((7 + i * 8) downto (i * 8));
                             end if;
                         end loop;
-                   when others => 
+                   when others =>
                        avlregister <= avlregister;
                 end case;
             end if;

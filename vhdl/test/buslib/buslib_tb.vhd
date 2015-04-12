@@ -62,7 +62,7 @@ begin
         rst <= '0';
         wait for 500 us;
 
-        avlmm_write8(4, x"ca", 2,
+        avlmm_write8(8, x"ca", 2,
             clk, write, addr, datawrite, byteenable);
 
         wait for 1 ms;
@@ -73,13 +73,13 @@ begin
 
     avlreg_con : avlreg
     port map (
-        clk        => clk, 
-        rst        => rst, 
-        write      => write, 
-        read       => read, 
-        addr       => addr, 
-        datawrite  => datawrite, 
-        dataread   => dataread, 
+        clk        => clk,
+        rst        => rst,
+        write      => write,
+        read       => read,
+        addr       => addr,
+        datawrite  => datawrite,
+        dataread   => dataread,
         byteenable => byteenable);
 
 
