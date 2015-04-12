@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.62 (w)1999-2014 BSI
+[*] Sun Apr 12 09:53:23 2015
+[*]
+[dumpfile] "/home/fabien/myapp/blp/vhdl/test/buslib/simu/buslib_tb.ghw"
+[dumpfile_mtime] "Sun Apr 12 09:11:58 2015"
+[dumpfile_size] 2642473
+[savefile] "/home/fabien/myapp/blp/vhdl/test/buslib/buslib.gtkw"
+[timestart] 508886000000
+[size] 1366 702
+[pos] -1 -1
+*-25.546309 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.buslib_tb.
+[treeopen] top.buslib_tb.avlreg_con.
+[sst_width] 218
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 179
+@28
+top.buslib_tb.clk
+top.buslib_tb.rst
+@200
+-avlaccess
+@28
+top.buslib_tb.avlreg_con.write
+top.buslib_tb.avlreg_con.read
+@22
+#{top.buslib_tb.avlreg_con.byteenable[7:0]} top.buslib_tb.avlreg_con.byteenable[7] top.buslib_tb.avlreg_con.byteenable[6] top.buslib_tb.avlreg_con.byteenable[5] top.buslib_tb.avlreg_con.byteenable[4] top.buslib_tb.avlreg_con.byteenable[3] top.buslib_tb.avlreg_con.byteenable[2] top.buslib_tb.avlreg_con.byteenable[1] top.buslib_tb.avlreg_con.byteenable[0]
+#{top.buslib_tb.avlreg_con.datawrite[63:0]} top.buslib_tb.avlreg_con.datawrite[63] top.buslib_tb.avlreg_con.datawrite[62] top.buslib_tb.avlreg_con.datawrite[61] top.buslib_tb.avlreg_con.datawrite[60] top.buslib_tb.avlreg_con.datawrite[59] top.buslib_tb.avlreg_con.datawrite[58] top.buslib_tb.avlreg_con.datawrite[57] top.buslib_tb.avlreg_con.datawrite[56] top.buslib_tb.avlreg_con.datawrite[55] top.buslib_tb.avlreg_con.datawrite[54] top.buslib_tb.avlreg_con.datawrite[53] top.buslib_tb.avlreg_con.datawrite[52] top.buslib_tb.avlreg_con.datawrite[51] top.buslib_tb.avlreg_con.datawrite[50] top.buslib_tb.avlreg_con.datawrite[49] top.buslib_tb.avlreg_con.datawrite[48] top.buslib_tb.avlreg_con.datawrite[47] top.buslib_tb.avlreg_con.datawrite[46] top.buslib_tb.avlreg_con.datawrite[45] top.buslib_tb.avlreg_con.datawrite[44] top.buslib_tb.avlreg_con.datawrite[43] top.buslib_tb.avlreg_con.datawrite[42] top.buslib_tb.avlreg_con.datawrite[41] top.buslib_tb.avlreg_con.datawrite[40] top.buslib_tb.avlreg_con.datawrite[39] top.buslib_tb.avlreg_con.datawrite[38] top.buslib_tb.avlreg_con.datawrite[37] top.buslib_tb.avlreg_con.datawrite[36] top.buslib_tb.avlreg_con.datawrite[35] top.buslib_tb.avlreg_con.datawrite[34] top.buslib_tb.avlreg_con.datawrite[33] top.buslib_tb.avlreg_con.datawrite[32] top.buslib_tb.avlreg_con.datawrite[31] top.buslib_tb.avlreg_con.datawrite[30] top.buslib_tb.avlreg_con.datawrite[29] top.buslib_tb.avlreg_con.datawrite[28] top.buslib_tb.avlreg_con.datawrite[27] top.buslib_tb.avlreg_con.datawrite[26] top.buslib_tb.avlreg_con.datawrite[25] top.buslib_tb.avlreg_con.datawrite[24] top.buslib_tb.avlreg_con.datawrite[23] top.buslib_tb.avlreg_con.datawrite[22] top.buslib_tb.avlreg_con.datawrite[21] top.buslib_tb.avlreg_con.datawrite[20] top.buslib_tb.avlreg_con.datawrite[19] top.buslib_tb.avlreg_con.datawrite[18] top.buslib_tb.avlreg_con.datawrite[17] top.buslib_tb.avlreg_con.datawrite[16] top.buslib_tb.avlreg_con.datawrite[15] top.buslib_tb.avlreg_con.datawrite[14] top.buslib_tb.avlreg_con.datawrite[13] top.buslib_tb.avlreg_con.datawrite[12] top.buslib_tb.avlreg_con.datawrite[11] top.buslib_tb.avlreg_con.datawrite[10] top.buslib_tb.avlreg_con.datawrite[9] top.buslib_tb.avlreg_con.datawrite[8] top.buslib_tb.avlreg_con.datawrite[7] top.buslib_tb.avlreg_con.datawrite[6] top.buslib_tb.avlreg_con.datawrite[5] top.buslib_tb.avlreg_con.datawrite[4] top.buslib_tb.avlreg_con.datawrite[3] top.buslib_tb.avlreg_con.datawrite[2] top.buslib_tb.avlreg_con.datawrite[1] top.buslib_tb.avlreg_con.datawrite[0]
+@28
+top.buslib_tb.avlreg_con.addr[0]
+@201
+-reg
+@22
+#{top.buslib_tb.avlreg_con.avlregister[63:0]} top.buslib_tb.avlreg_con.avlregister[63] top.buslib_tb.avlreg_con.avlregister[62] top.buslib_tb.avlreg_con.avlregister[61] top.buslib_tb.avlreg_con.avlregister[60] top.buslib_tb.avlreg_con.avlregister[59] top.buslib_tb.avlreg_con.avlregister[58] top.buslib_tb.avlreg_con.avlregister[57] top.buslib_tb.avlreg_con.avlregister[56] top.buslib_tb.avlreg_con.avlregister[55] top.buslib_tb.avlreg_con.avlregister[54] top.buslib_tb.avlreg_con.avlregister[53] top.buslib_tb.avlreg_con.avlregister[52] top.buslib_tb.avlreg_con.avlregister[51] top.buslib_tb.avlreg_con.avlregister[50] top.buslib_tb.avlreg_con.avlregister[49] top.buslib_tb.avlreg_con.avlregister[48] top.buslib_tb.avlreg_con.avlregister[47] top.buslib_tb.avlreg_con.avlregister[46] top.buslib_tb.avlreg_con.avlregister[45] top.buslib_tb.avlreg_con.avlregister[44] top.buslib_tb.avlreg_con.avlregister[43] top.buslib_tb.avlreg_con.avlregister[42] top.buslib_tb.avlreg_con.avlregister[41] top.buslib_tb.avlreg_con.avlregister[40] top.buslib_tb.avlreg_con.avlregister[39] top.buslib_tb.avlreg_con.avlregister[38] top.buslib_tb.avlreg_con.avlregister[37] top.buslib_tb.avlreg_con.avlregister[36] top.buslib_tb.avlreg_con.avlregister[35] top.buslib_tb.avlreg_con.avlregister[34] top.buslib_tb.avlreg_con.avlregister[33] top.buslib_tb.avlreg_con.avlregister[32] top.buslib_tb.avlreg_con.avlregister[31] top.buslib_tb.avlreg_con.avlregister[30] top.buslib_tb.avlreg_con.avlregister[29] top.buslib_tb.avlreg_con.avlregister[28] top.buslib_tb.avlreg_con.avlregister[27] top.buslib_tb.avlreg_con.avlregister[26] top.buslib_tb.avlreg_con.avlregister[25] top.buslib_tb.avlreg_con.avlregister[24] top.buslib_tb.avlreg_con.avlregister[23] top.buslib_tb.avlreg_con.avlregister[22] top.buslib_tb.avlreg_con.avlregister[21] top.buslib_tb.avlreg_con.avlregister[20] top.buslib_tb.avlreg_con.avlregister[19] top.buslib_tb.avlreg_con.avlregister[18] top.buslib_tb.avlreg_con.avlregister[17] top.buslib_tb.avlreg_con.avlregister[16] top.buslib_tb.avlreg_con.avlregister[15] top.buslib_tb.avlreg_con.avlregister[14] top.buslib_tb.avlreg_con.avlregister[13] top.buslib_tb.avlreg_con.avlregister[12] top.buslib_tb.avlreg_con.avlregister[11] top.buslib_tb.avlreg_con.avlregister[10] top.buslib_tb.avlreg_con.avlregister[9] top.buslib_tb.avlreg_con.avlregister[8] top.buslib_tb.avlreg_con.avlregister[7] top.buslib_tb.avlreg_con.avlregister[6] top.buslib_tb.avlreg_con.avlregister[5] top.buslib_tb.avlreg_con.avlregister[4] top.buslib_tb.avlreg_con.avlregister[3] top.buslib_tb.avlreg_con.avlregister[2] top.buslib_tb.avlreg_con.avlregister[1] top.buslib_tb.avlreg_con.avlregister[0]
+[pattern_trace] 1
+[pattern_trace] 0
