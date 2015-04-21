@@ -78,7 +78,7 @@ package body buslib_pkg is
         datawrite(7 + byte_pos*8 downto byte_pos*8) <= (others => '0');
         write <= '0';
         addr <= ZERO(addr_full'length - 1 downto addrtailsize);
-        byteenable <= ZERO(byteenable'length downto 0);
+        byteenable <= ZERO(byteenable'length - 1 downto 0);
     end procedure avlmm_write8;
 
     procedure avlmm_read8(
@@ -118,7 +118,7 @@ package body buslib_pkg is
         value := dataread(7 + byte_pos*8 downto byte_pos*8);
         read <= '0';
         addr <= ZERO(addr_full'length - 1 downto addrtailsize);
-        byteenable <= ZERO(byteenable'length downto 0);
+        byteenable <= ZERO(byteenable'length - 1 downto 0);
     end procedure avlmm_read8;
 
 
