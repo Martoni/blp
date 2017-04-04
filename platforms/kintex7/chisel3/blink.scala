@@ -37,10 +37,10 @@ class Top extends RawModule {
   ibufds.io.I := clock_p
   ibufds.io.IB:= clock_n
 
-  val blink = Module(new Blink)
-  blink.clock := ibufds.io.O
-  led := blink.io.led
-
+  withClockAndReset(ibufds.io.O, false.B) {
+    val blink = Module(new Blink)
+    led := blink.io.led
+  }
 }
 
 object TopBlinkDriver extends App {
