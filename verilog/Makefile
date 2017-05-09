@@ -24,7 +24,7 @@ $(VERILATOR_DIR)/Vbutton_deb.h: src/button_deb.v test/test_button_deb.cpp
 	date >> time.txt
 	$(VERILATOR) -Wall -cc src/button_deb.v $(VERILATOR_FLAGS)\
 		--exe test/test_button_deb.cpp
-	echo "end of convertion" >> time.txt
+	echo "end of conversion" >> time.txt
 	date >> time.txt
 
 verilator_button: $(VERILATOR_DIR)/Vbutton_deb.h

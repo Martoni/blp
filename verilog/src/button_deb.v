@@ -95,4 +95,13 @@ reg button_in_edge_old;
 
     assign button_valid = button_valid_s;
 
+`ifdef COCOTB_SIM
+initial begin
+  $dumpfile ("button_deb.vcd");
+  $dumpvars (0, button_deb);
+  #1;
+end
+`endif
+
 endmodule
+
