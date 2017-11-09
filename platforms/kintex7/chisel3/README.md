@@ -1,4 +1,4 @@
-Testing blinking led on kintex7. The objective it to test new Module class
+Testing blinking led on kintex7. The objective is to test new Module class
 hierarchy of chisel3.
 
 Installing Chisel3
