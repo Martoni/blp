@@ -5,6 +5,6 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("releases")
 )
 
-libraryDependencies += "edu.berkeley.cs" %% "chisel3" % "3.1-SNAPSHOT"
+libraryDependencies += "edu.berkeley.cs" %% "chisel3" % "3.1.0"
 
-libraryDependencies += "edu.berkeley.cs" %% "firrtl" % "1.1-SNAPSHOT"
+libraryDependencies += "edu.berkeley.cs" %% "firrtl" % "1.1.0"
