@@ -1,4 +1,4 @@
-## This is a reproducer for a bug of 'risingedge'
+# This is a reproducer for a bug of 'risingedge'
 
 This bug is reproduced with :
 * Chisel3 : for HDL verilog generating code
@@ -7,20 +7,22 @@ This bug is reproduced with :
 
 To reproduce bug uncomment and comment lines in source risingedge.scala as following:
 
-
+```scala
   // seems to not work with icarus + cocotb
   def risingedge(x: Bool) = x && !RegNext(x)
   def fallingedge(x: Bool) = !x && RegNext(x)
   // works with icarus + cocotb
   //def risingedge(x: Bool) = x && !RegNext(RegNext(x))
   //def fallingedge(x: Bool) = !x && RegNext(RegNext(x))
+```
 
 Then go to directory chisel/risingedge/cocotb and do make :
-
+```bash
 $ make
-
+```
 Once simulation done see the wave with gtkwave :
 
+```bash
 $ gtkwave RisingEdge.vcd 
-
+```
 
