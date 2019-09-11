@@ -1,5 +1,7 @@
 # This is a reproducer for a bug of 'risingedge'
 
+Question on stackoverflow : [RisingEdge example doesn't work for module input signal in Chisel3](https://stackoverflow.com/questions/57866167/risingedge-example-doesnt-work-for-module-input-signal-in-chisel3)
+
 This bug is reproduced with :
 * Chisel3 : for HDL verilog generating code
 * Icarus verilog : for simulation
