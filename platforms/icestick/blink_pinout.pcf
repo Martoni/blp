@@ -1,0 +1,9 @@
+set_io clock  21
+set_io power 95
+set_io D1 99
+set_io D2 98
+set_io D3 97
+set_io D4 96
+set_io rxd 106
+set_io txd 105
+set_io sd 107

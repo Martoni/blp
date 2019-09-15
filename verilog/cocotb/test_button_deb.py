@@ -28,6 +28,9 @@ def debounce_test(dut):
     """
         Test debounce
     """
+    import sys
+    print("version")
+    print(sys.version)
     dut._log.info("Running test!")
     dut._log.info("freq value : {} kHz".format(int(dut.clk_freq)))
     dut._log.info("debounce value : {} ms".format(int(dut.debounce_per_ms)))

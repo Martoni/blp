@@ -1,0 +1,9 @@
+# FPGA : EG4::EG4S20BG256
+
+set_pin_assignment {clock} { LOCATION = K14; } ##24MHZ
+#set_pin_assignment {RST_N} { LOCATION = K16; }  ##USER_KEY
+
+## RGB LEDs, 3 pins
+set_pin_assignment {led} { LOCATION = R3;  }  ##LED_R, R3
+##set_pin_assignment {RGB_LED[1]} { LOCATION = J14;  } ##LED_G, J14
+##set_pin_assignment {RGB_LED[2]} { LOCATION = P13;  } ##LED_B, P13
