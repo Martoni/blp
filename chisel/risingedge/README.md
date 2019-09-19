@@ -2,6 +2,8 @@
 
 Question on stackoverflow : [RisingEdge example doesn't work for module input signal in Chisel3](https://stackoverflow.com/questions/57866167/risingedge-example-doesnt-work-for-module-input-signal-in-chisel3)
 
+***Problem solved***: [Do not toggle inputs values on rising edge of clock !](https://stackoverflow.com/questions/57866167/risingedge-example-doesnt-work-for-module-input-signal-in-chisel3/58010130#58010130)
+
 This bug is reproduced with :
 * Chisel3 : for HDL verilog generating code
 * Icarus verilog : for simulation
