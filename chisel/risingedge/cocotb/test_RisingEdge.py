@@ -30,6 +30,7 @@ def test_rising_edge(dut):
     redge = RisingEdge(dut, Clock(dut.clock, 1, "ns")) 
     yield redge.reset()
     cwait = Timer(4, "ns")
+    yield FallingEdge(dut.clock)
     for i in range(5):
         dut.io_sclk <= 1
         yield cwait

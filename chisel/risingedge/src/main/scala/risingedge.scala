@@ -10,11 +10,11 @@ class RisingEdge extends Module {
   })
 
   // seems to not work with icarus + cocotb
-  //def risingedge(x: Bool) = x && !RegNext(x)
-  //def fallingedge(x: Bool) = !x && RegNext(x)
+  def risingedge(x: Bool) = x && !RegNext(x)
+  def fallingedge(x: Bool) = !x && RegNext(x)
   // works with icarus + cocotb
-  def risingedge(x: Bool) = x && !RegNext(RegNext(x))
-  def fallingedge(x: Bool) = !x && RegNext(RegNext(x))
+  //def risingedge(x: Bool) = x && !RegNext(RegNext(x))
+  //def fallingedge(x: Bool) = !x && RegNext(RegNext(x))
 
 
   io.redge :=  risingedge(io.sclk)
