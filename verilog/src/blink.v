@@ -9,8 +9,10 @@ module blink (
 // Icestick clock : 12Mhz
 //parameter clock_freq = 12_000_000; // clock frequency
 // LicheeTang clock : 24Mhz
-parameter clock_freq = 24_000_000; // clock frequency
-
+//parameter clock_freq = 24_000_000; // clock frequency
+// Gowin Little Bee
+parameter clock_freq = 12_000_000; // clock frequency
+//parameter clock_freq = 100_000_000; // clock_x
 localparam MAX_COUNT = clock_freq;
 localparam MAX_COUNT_UPPER = $clog2(MAX_COUNT) - 1;
 
