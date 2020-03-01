@@ -51,3 +51,8 @@ IceStick (TODO)
 ---------------
 
 Ice40 little dev kit (usb key)
+
+Colorlight 5A-75B
+-----------------
+
+A lowcost ECP5 kit.
