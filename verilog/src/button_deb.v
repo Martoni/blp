@@ -1,5 +1,6 @@
 // Author : Fabien Marteau <fabien.marteau@armadeus.com>
 // Creation Date : 02/11/2014
+`timescale 1 ps / 1 ps
 
 module button_deb(
         // sync design
@@ -95,6 +96,7 @@ reg button_in_edge_old;
 
     assign button_valid = button_valid_s;
 
+// Only for icarus sim
 `ifdef COCOTB_SIM
 initial begin
   $dumpfile ("button_deb.vcd");
