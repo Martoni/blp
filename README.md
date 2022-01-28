@@ -42,10 +42,10 @@ APF6_SP (TODO)
 
 i.MX6 + CycloneV board from Armadeus System.
 
-AC701 (TODO)
+AC701
 ------------
 
-Artix7 developpement kit
+[Artix7 developpement kit](https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html)
 
 IceStick (TODO)
 ---------------
