@@ -19,7 +19,7 @@ nvc_button_deb:  test/test_$(PROJECT_NAME).vhd src/$(PROJECT_NAME).vhd
 	mkdir -p nvc$(SIMU_DIR)
 	cd nvc$(SIMU_DIR); $(NVC) -a ../test/test_$(PROJECT_NAME).vhd ../src/$(PROJECT_NAME).vhd
 	cd nvc$(SIMU_DIR); $(NVC) -e $(PROJECT_NAME)_tb
-	cd nvc$(SIMU_DIR); $(NVC) -r $(PROJECT_NAME)_tb -w
+	cd nvc$(SIMU_DIR); $(NVC) -r $(PROJECT_NAME)_tb -w --exit-severity=error
 
 nvc_view: $(SIMU_DIR)/$(PROJECT_NAME)_tb.fst
 	$(WAVE) $^

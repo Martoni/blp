@@ -111,7 +111,8 @@ begin
         end loop;
         report "<- Simulation Time";
         wait for 1 ns;
-        assert false report "*** End of test ***";
+        -- old fashion way to terminate bench.
+        assert false report "*** End of test ***" severity error;
     end process stimulis_p;
 
 end Architecture button_deb_tb_1 ;
